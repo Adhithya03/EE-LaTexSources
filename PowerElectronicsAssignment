@@ -1,0 +1,104 @@
+\documentclass[12pt]{article}
+    \usepackage[dvipsnames]{xcolor}
+    \usepackage{amsmath,amssymb,amsthm}
+    \usepackage{graphicx}
+    \usepackage{tikz}
+    \usepackage[margin=0.7in]{geometry}
+    \usepackage{fancyhdr}
+    \usepackage{xcolor}
+    \usepackage{colortbl}
+    \usepackage{hyperref}
+
+    
+    \graphicspath{ {./images/} }
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{5pt plus 1pt}
+    \setlength{\headheight}{13.6pt}
+    \newcommand\question[1]{\item\vspace{.25in}\hrule\textbf{#1}\vspace{.5em}\hrule\vspace{.10in}}
+    \newcommand\answer{\vspace{.10in}\textbf{A: }}
+    \pagestyle{fancyplain}
+    \lhead{\textbf{\NAME}}
+    \chead{\textbf{\HWNUM}}
+    \rhead{\today}
+
+    \definecolor{okbokk}{HTML}{535ba3}
+    
+    \newcommand\justurl[1]{\textcolor{okbokk}{{\url{#1}}}}
+    \newcommand\Red[2]{\textit{Answer from} \textbf{{#1}}\\ Page: {$#2$}}
+    \newcommand\B{\textbf}
+    \newcommand\I{\textit}
+    \newcommand\p{\item}
+    \newcommand\see[1]{\vspace{0.1in}\textit{Source: }\textcolor{okbokk}{{\url{#1}}}}
+    \newcommand\hlb[1]{\colorbox{CornflowerBlue}{#1}}
+
+    \newcommand\Dline{\begin{tikzpicture}\draw [thin,dash dot] (0,1) -- (16.5,1);\end{tikzpicture}}
+    \newcommand\NAME{Adhithya}
+    \newcommand\HWNUM{Power electronics}
+    \setlength{\headheight}{20pt}
+
+
+    \begin{document}\raggedright
+
+\begin{itemize} 
+    \p[$\square$] Material prepared with \LaTeX{} Source code available at \justurl{https://github.com/Adhithya03}\\
+
+    \p[$\square$] Join our discord server for more resources, \justurl{https://discord.gg/aYzXDzPgzG}
+\end{itemize}
+
+
+% --------------------------------------------------------------------------------------------
+
+\begin{enumerate}
+    \question{What do you mean by thermal run away?}
+
+    \answer With the increase in collector current $I_c$, collector power dissipation \B{increases} which \B{raises} the junction temperature that leads to further increase in collector current $I_c$. The process is cumulative and may lead to the eventual destruction of transistor. This phenomenon is known as \hlb{Thermal runaway}.
+
+    \see{https://qr.ae/pvbjMP}
+    
+    \question{What is the difference between triggering and driving?}
+    
+    \B{Driving:} Applying power continuously to the gate or base of the power semiconductor device.
+    \vspace{0.1in}
+
+    \B{Triggering:} Applying a pulse at start and removing it.
+
+    \question{Explain turn-on process of SCR using two transistor analogy.}
+    
+    \question{What are the advantages of UJT triggering over other methods?}
+    
+    \begin{enumerate}
+        
+        \p There exists an isolation between triggering circuit and main circuit, provided by the pulse transformer.
+
+
+    \end{enumerate}
+
+
+    \question{What do mean by voltage commutation?}
+    
+    \question{What do mean by current commutation?}
+    
+    \question{What are the conditions for successful turn-off of SCR ?}
+    
+    \question{What are the advantages of GTO thyristor?}
+    
+    \question{What do you mean by line commutation?}
+    
+    \question{List various forced commutation methods.}
+    
+    \question{Draw the pulse amplifier circuit used for triggering the SCR.}
+    
+    \question{Draw the driver circuit used for driving a MOSFET/BJT.}
+    
+    \question{What do you mean by intelligent power module?}
+    
+    \question{What do you mean by secondary breakdown in BJT?}
+    
+    \question{How do you design charging resistance of UJT firing circuit?}
+    
+    \question{What do you mean by ringing circuit?}
+    
+    A circuit which has a capacitance in parallel with a resistance and inductance.
+
+\end{enumerate}
+\end{document}
