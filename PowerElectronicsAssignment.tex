@@ -1,6 +1,5 @@
 \documentclass[12pt]{article}
     \usepackage[dvipsnames]{xcolor}
-    \usepackage{amsmath,amssymb,amsthm}
     \usepackage{graphicx}
     \usepackage{tikz}
     \usepackage[margin=0.7in]{geometry}
@@ -8,6 +7,8 @@
     \usepackage{xcolor}
     \usepackage{colortbl}
     \usepackage{hyperref}
+    \usepackage{color,soul}
+
 
     
     \graphicspath{ {./images/} }
@@ -21,84 +22,148 @@
     \chead{\textbf{\HWNUM}}
     \rhead{\today}
 
-    \definecolor{okbokk}{HTML}{535ba3}
-    
-    \newcommand\justurl[1]{\textcolor{okbokk}{{\url{#1}}}}
+    % https://coolors.co/palette/fdc921-fdd85d-fffdf7-99d6ea-6798c0
+    \definecolor{urlBlue}{HTML}{6798C0}
+    \definecolor{voxYellow}{HTML}{FDD85D}
+    \definecolor{pigRed}{HTML}{bf211e}
+    \setul{0.4ex}{0.3ex}
+    \setulcolor{voxYellow}
+
+
+    \newcommand\justurl[1]{\textcolor{urlBlue}{{\url{#1}}}}
     \newcommand\Red[2]{\textit{Answer from} \textbf{{#1}}\\ Page: {$#2$}}
-    \newcommand\B{\textbf}
-    \newcommand\I{\textit}
+    \renewcommand\u{\ul}
     \newcommand\p{\item}
-    \newcommand\see[1]{\vspace{0.1in}\textit{Source: }\textcolor{okbokk}{{\url{#1}}}}
-    \newcommand\hlb[1]{\colorbox{CornflowerBlue}{#1}}
+    \newcommand\see[1]{\vspace{0.1in}{\small{\textit{Source: }\textcolor{urlBlue}{{\url{#1}}}}}}
+    \newcommand\h[1]{\colorbox{voxYellow}{#1}}
 
     \newcommand\Dline{\begin{tikzpicture}\draw [thin,dash dot] (0,1) -- (16.5,1);\end{tikzpicture}}
     \newcommand\NAME{Adhithya}
-    \newcommand\HWNUM{Power electronics}
+    \newcommand\HWNUM{Power electronics U1 Q\&A}
     \setlength{\headheight}{20pt}
 
 
     \begin{document}\raggedright
 
 \begin{itemize} 
-    \p[$\square$] Material prepared with \LaTeX{} Source code available at \justurl{https://github.com/Adhithya03}\\
+    \p[$\rightarrow$] Material prepared with \LaTeX{} source code available at \justurl{https://github.com/Adhithya03/EE-LaTexSources/}\\
 
-    \p[$\square$] Join our discord server for more resources, \justurl{https://discord.gg/aYzXDzPgzG}
+    \p[$\rightarrow$] Join our discord server for more resources, \justurl{https://discord.gg/aYzXDzPgzG}
 \end{itemize}
 
 
-% --------------------------------------------------------------------------------------------
+
 
 \begin{enumerate}
     \question{What do you mean by thermal run away?}
 
-    \answer With the increase in collector current $I_c$, collector power dissipation \B{increases} which \B{raises} the junction temperature that leads to further increase in collector current $I_c$. The process is cumulative and may lead to the eventual destruction of transistor. This phenomenon is known as \hlb{Thermal runaway}.
+    \answer With the increase in collector current $I_c$, collector power dissipation \u{increases} which \u{raises} the junction temperature that leads to further increase in collector current $I_c$. The process is cumulative and may lead to the eventual destruction of transistor. This phenomenon is known as \u{Thermal runaway}.
 
     \see{https://qr.ae/pvbjMP}
+
     
     \question{What is the difference between triggering and driving?}
     
-    \B{Driving:} Applying power continuously to the gate or base of the power semiconductor device.
+    \u{Driving:} Applying power \u{continuously} to the gate or base of the power semiconductor device.
     \vspace{0.1in}
 
-    \B{Triggering:} Applying a pulse at start and removing it.
+    \u{Triggering:} Applying a pulse at start and \u{removing it}.
+
 
     \question{Explain turn-on process of SCR using two transistor analogy.}
     
+
     \question{What are the advantages of UJT triggering over other methods?}
     
     \begin{enumerate}
-        
-        \p There exists an isolation between triggering circuit and main circuit, provided by the pulse transformer.
+        \p Pulse transformer in the circuit provides isolation between triggering circuit and power circuit.
+        \p Has Switching time is in the range of nanoseconds.
+    \end{enumerate}
+ 
+    \see{https://web.archive.org/web/20220830091807/https://www.ktunotes.in/wp-content/uploads/2018/05/PE-M2-Ktunotes.in_.pdf}
 
+    \question{What do mean by voltage commutation?}
+    \answer A voltage source is impressed across the SCR to be turned off, mostly by an auxiliary SCR.
+    
+    \see{https://web.archive.org/web/20220830085415/https://guillaumeboivin.com/what-is-meant-by-voltage-commutation.html}
+    
+
+
+    \question{What do mean by current commutation?}
+    
+    \answer A current pulse is made to flow in the \u{reverse direction} through the conducting thyristor.
+
+
+    \see{https://engineerscommunity.com/t/what-is-meant-by-current-commutation/1297}
+
+    \question{What are the conditions for successful turn-off of SCR ?}
+    \begin{enumerate}
+    
+    \p To turn off an SCR, it is required that its anode current should fall below the \u{holding current}, and, 
+
+    \p \u{A reverse voltage} should be applied across the SCR for the sufficient time so that it goes to forward blocking mode from forward conduction mode.
 
     \end{enumerate}
 
+    \see{https://web.archive.org/web/20220830092656/https://electricalbaba.com/scr-commutation-types/}
 
-    \question{What do mean by voltage commutation?}
-    
-    \question{What do mean by current commutation?}
-    
-    \question{What are the conditions for successful turn-off of SCR ?}
-    
     \question{What are the advantages of GTO thyristor?}
-    
+
+    \begin{enumerate}
+        \p No need of separate commutation circuit, Which reduces cost.
+        
+        \p Improved efficiency.
+
+        \p Reduced acoustic and electromagnetic noise due to absence of commutation chokes.
+
+        \p Faster turn-off, which increases the upper limiting frequency of the circuit.
+    \end{enumerate}
+
+    \see{M.H.Rashid 4th ed. Pg 481}
+
     \question{What do you mean by line commutation?}
-    
+        
+    Line commutation is a Class-F SCR commutation technique in which, a thyristor is turned off due to \u{natural current zero} and voltage reversal after every half cycle.
+
     \question{List various forced commutation methods.}
-    
+
+    \begin{enumerate}
+        \p Class-A Commutation (Load Commutation)
+        \p Class-B Commutation (Resonant Pulse Commutation)
+        \p Class-C Commutation (Complimentary Commutation)
+        \p Class-D Commutation (Impulse Commutation)
+        \p Class-E Commutation (External Pulse Commutation)
+    \end{enumerate}
+
+
+    \see{https://web.archive.org/web/20220830092656/https://electricalbaba.com/scr-commutation-types/}
+
     \question{Draw the pulse amplifier circuit used for triggering the SCR.}
+    \includegraphics[width=6in]{pulseAmplifier.png}
     
-    \question{Draw the driver circuit used for driving a MOSFET/BJT.}
-    
+    \question{Draw the driver circuit used for driving a MOSFET and BJT.}
+    \begin{center}
+        
+    check sir's ppt.
+
+    \end{center}
+
     \question{What do you mean by intelligent power module?}
     
+    \answer ``Power module'' refers to the presence of a \u{power switching component} (usually an IGBT), and the module is ``intelligent'' because it includes additional control and \u{protection} circuitry.
+
+    \see{https://web.archive.org/web/20220830094717/https://eepower.com/technical-articles/intelligent-power-modules-ipms-concepts-features-and-applications/}
+
     \question{What do you mean by secondary breakdown in BJT?}
+
+     In a power transistor with a large junction area, under certain conditions of current and voltage, the current concentrates in a small spot of the base-emitter junction. This causes local heating, progressing into a short between collector and emitter.\\
+     \see{https://web.archive.org/web/20220830095024/https://en.m.wikipedia.org/wiki/Safe_operating_area}
     
     \question{How do you design charging resistance of UJT firing circuit?}
-    
+    $$R_3 = {T\over C\times ln \left({1\over 1-\eta}\right)}$$
     \question{What do you mean by ringing circuit?}
     
-    A circuit which has a capacitance in parallel with a resistance and inductance.
+    A circuit which has a capacitance in \u{parallel} with a resistance and inductance.
 
 \end{enumerate}
 \end{document}
