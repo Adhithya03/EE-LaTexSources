@@ -1,0 +1,63 @@
+\documentclass[12pt,a4paper]{article}
+    \usepackage[dvipsnames]{xcolor}
+    \usepackage{graphicx}
+    \usepackage{tikz}
+    \usepackage[margin=0.7in]{geometry}
+    \usepackage{fancyhdr}
+    \usepackage{xcolor}
+    \usepackage{colortbl}
+    \usepackage{hyperref}
+    \usepackage{color,soul}
+
+
+    
+    \graphicspath{ {./images/} }
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{5pt plus 1pt}
+    \setlength{\headheight}{13.6pt}
+    \newcommand\question[1]{\item\vspace{.25in}\hrule\textbf{#1}\vspace{.5em}\hrule\vspace{.10in}}
+    \newcommand\answer{\vspace{.10in}\textbf{A: }}
+    \pagestyle{fancyplain}
+    \lhead{\textbf{\NAME}}
+    \chead{\textbf{\HWNUM}}
+    \rhead{\today}
+
+    % https://coolors.co/palette/fdc921-fdd85d-fffdf7-99d6ea-6798c0
+    \definecolor{urlBlue}{HTML}{6798C0}
+    \definecolor{voxYellow}{HTML}{FDD85D}
+    \definecolor{pigRed}{HTML}{bf211e}
+    \setul{0.4ex}{0.3ex}
+    \setulcolor{voxYellow}
+
+
+    \newcommand\justurl[1]{\textcolor{urlBlue}{{\url{#1}}}}
+    \newcommand\Red[1]{\textit{Answer from} \textbf{{#1}}}
+    \newcommand\Redp[2]{\textit{Answer from} \textbf{{#1}}\\ Page: {$#2$}}
+    \renewcommand\u{\ul}
+    \newcommand\p{\item}
+    \newcommand\see[1]{\vspace{0.1in}{\small{\textit{Source: }\textcolor{urlBlue}{{\url{#1}}}}}}
+    \newcommand\h[1]{\colorbox{voxYellow}{#1}}
+
+    \newcommand\Dline{\begin{tikzpicture}\draw [thin,dash dot] (0,1) -- (16.5,1);\end{tikzpicture}}
+    \newcommand\NAME{Adhithya}
+    \newcommand\HWNUM{Control systems Q\&A}
+    \setlength{\headheight}{20pt}
+
+
+\begin{document}\raggedright
+
+\begin{itemize} 
+    \p[$\rightarrow$] Material prepared with \LaTeX{} source code available at \justurl{https://github.com/Adhithya03/EE-LaTexSources/}\\
+
+    \p[$\rightarrow$] Join our discord server for more resources, \justurl{https://discord.gg/aYzXDzPgzG}
+\end{itemize}
+\begin{enumerate}
+
+\question{Define closed-loop system.}
+
+\answer Instantaneous output of a system is \h{fed-back} to input so as to modify it in such a way to produce a desired output.
+
+\Red{Nagarth M.Gopal}
+
+\end{enumerate}
+\end{document}
